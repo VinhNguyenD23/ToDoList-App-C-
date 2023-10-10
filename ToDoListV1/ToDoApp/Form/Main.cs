@@ -119,5 +119,10 @@ namespace TodoApp
                 Update_Data(Command);
             }
         }
+
+        private void Reset_Btn_Click(object sender, System.EventArgs e)
+        {
+            Update_Database_Default();
+        }
     }
 }

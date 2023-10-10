@@ -30,6 +30,9 @@ namespace TodoApp
         private void InitializeComponent()
         {
             this.kryptonGroupBox1 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.RB_3 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
+            this.RB_2 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
+            this.RB_1 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
             this.Time_End_CB = new ComponentFactory.Krypton.Toolkit.KryptonDateTimePicker();
             this.Priority_CB = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.Status_CB = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
@@ -46,9 +49,7 @@ namespace TodoApp
             this.Add_Btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.Status_ = new System.Windows.Forms.StatusStrip();
             this.Status_LB = new System.Windows.Forms.ToolStripStatusLabel();
-            this.RB_1 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
-            this.RB_2 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
-            this.RB_3 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
+            this.Reset_Btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
             this.kryptonGroupBox1.Panel.SuspendLayout();
@@ -79,6 +80,7 @@ namespace TodoApp
             // 
             // kryptonGroupBox1.Panel
             // 
+            this.kryptonGroupBox1.Panel.Controls.Add(this.Reset_Btn);
             this.kryptonGroupBox1.Panel.Controls.Add(this.RB_3);
             this.kryptonGroupBox1.Panel.Controls.Add(this.RB_2);
             this.kryptonGroupBox1.Panel.Controls.Add(this.RB_1);
@@ -94,6 +96,30 @@ namespace TodoApp
             this.kryptonGroupBox1.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonGroupBox1.TabIndex = 0;
             this.kryptonGroupBox1.Values.Heading = "Lọc dữ liệu";
+            // 
+            // RB_3
+            // 
+            this.RB_3.Location = new System.Drawing.Point(4, 137);
+            this.RB_3.Name = "RB_3";
+            this.RB_3.Size = new System.Drawing.Size(189, 20);
+            this.RB_3.TabIndex = 16;
+            this.RB_3.Values.Text = "Lọc theo Thời gian hoàn thành";
+            // 
+            // RB_2
+            // 
+            this.RB_2.Location = new System.Drawing.Point(4, 111);
+            this.RB_2.Name = "RB_2";
+            this.RB_2.Size = new System.Drawing.Size(139, 20);
+            this.RB_2.TabIndex = 15;
+            this.RB_2.Values.Text = "Lọc theo Mức ưu tiên";
+            // 
+            // RB_1
+            // 
+            this.RB_1.Location = new System.Drawing.Point(4, 85);
+            this.RB_1.Name = "RB_1";
+            this.RB_1.Size = new System.Drawing.Size(126, 20);
+            this.RB_1.TabIndex = 14;
+            this.RB_1.Values.Text = "Lọc theo trạng thái";
             // 
             // Time_End_CB
             // 
@@ -308,29 +334,20 @@ namespace TodoApp
             this.Status_LB.Size = new System.Drawing.Size(55, 17);
             this.Status_LB.Text = "Connect:";
             // 
-            // RB_1
+            // Reset_Btn
             // 
-            this.RB_1.Location = new System.Drawing.Point(4, 85);
-            this.RB_1.Name = "RB_1";
-            this.RB_1.Size = new System.Drawing.Size(126, 20);
-            this.RB_1.TabIndex = 14;
-            this.RB_1.Values.Text = "Lọc theo trạng thái";
-            // 
-            // RB_2
-            // 
-            this.RB_2.Location = new System.Drawing.Point(4, 111);
-            this.RB_2.Name = "RB_2";
-            this.RB_2.Size = new System.Drawing.Size(139, 20);
-            this.RB_2.TabIndex = 15;
-            this.RB_2.Values.Text = "Lọc theo Mức ưu tiên";
-            // 
-            // RB_3
-            // 
-            this.RB_3.Location = new System.Drawing.Point(4, 137);
-            this.RB_3.Name = "RB_3";
-            this.RB_3.Size = new System.Drawing.Size(189, 20);
-            this.RB_3.TabIndex = 16;
-            this.RB_3.Values.Text = "Lọc theo Thời gian hoàn thành";
+            this.Reset_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Reset_Btn.Location = new System.Drawing.Point(117, 343);
+            this.Reset_Btn.Name = "Reset_Btn";
+            this.Reset_Btn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.Reset_Btn.Size = new System.Drawing.Size(90, 25);
+            this.Reset_Btn.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Reset_Btn.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Reset_Btn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Reset_Btn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Reset_Btn.TabIndex = 17;
+            this.Reset_Btn.Values.Text = "Đặt lại";
+            this.Reset_Btn.Click += new System.EventHandler(this.Reset_Btn_Click);
             // 
             // Main
             // 
@@ -391,6 +408,7 @@ namespace TodoApp
         private ComponentFactory.Krypton.Toolkit.KryptonRadioButton RB_3;
         private ComponentFactory.Krypton.Toolkit.KryptonRadioButton RB_2;
         private ComponentFactory.Krypton.Toolkit.KryptonRadioButton RB_1;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton Reset_Btn;
     }
 }
 
