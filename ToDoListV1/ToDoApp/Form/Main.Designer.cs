@@ -30,6 +30,7 @@ namespace TodoApp
         private void InitializeComponent()
         {
             this.kryptonGroupBox1 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.Reset_Btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.RB_3 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
             this.RB_2 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
             this.RB_1 = new ComponentFactory.Krypton.Toolkit.KryptonRadioButton();
@@ -49,7 +50,6 @@ namespace TodoApp
             this.Add_Btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.Status_ = new System.Windows.Forms.StatusStrip();
             this.Status_LB = new System.Windows.Forms.ToolStripStatusLabel();
-            this.Reset_Btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
             this.kryptonGroupBox1.Panel.SuspendLayout();
@@ -96,6 +96,21 @@ namespace TodoApp
             this.kryptonGroupBox1.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonGroupBox1.TabIndex = 0;
             this.kryptonGroupBox1.Values.Heading = "Lọc dữ liệu";
+            // 
+            // Reset_Btn
+            // 
+            this.Reset_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Reset_Btn.Location = new System.Drawing.Point(117, 343);
+            this.Reset_Btn.Name = "Reset_Btn";
+            this.Reset_Btn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.Reset_Btn.Size = new System.Drawing.Size(90, 25);
+            this.Reset_Btn.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Reset_Btn.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Reset_Btn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Reset_Btn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Reset_Btn.TabIndex = 17;
+            this.Reset_Btn.Values.Text = "Đặt lại";
+            this.Reset_Btn.Click += new System.EventHandler(this.Reset_Btn_Click);
             // 
             // RB_3
             // 
@@ -242,7 +257,9 @@ namespace TodoApp
             this.Data_View.Location = new System.Drawing.Point(4, 4);
             this.Data_View.Name = "Data_View";
             this.Data_View.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.Data_View.ReadOnly = true;
             this.Data_View.RowHeadersVisible = false;
+            this.Data_View.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Data_View.Size = new System.Drawing.Size(825, 295);
             this.Data_View.TabIndex = 0;
             // 
@@ -333,21 +350,6 @@ namespace TodoApp
             this.Status_LB.Name = "Status_LB";
             this.Status_LB.Size = new System.Drawing.Size(55, 17);
             this.Status_LB.Text = "Connect:";
-            // 
-            // Reset_Btn
-            // 
-            this.Reset_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Reset_Btn.Location = new System.Drawing.Point(117, 343);
-            this.Reset_Btn.Name = "Reset_Btn";
-            this.Reset_Btn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.Reset_Btn.Size = new System.Drawing.Size(90, 25);
-            this.Reset_Btn.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Reset_Btn.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.Reset_Btn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.Reset_Btn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Reset_Btn.TabIndex = 17;
-            this.Reset_Btn.Values.Text = "Đặt lại";
-            this.Reset_Btn.Click += new System.EventHandler(this.Reset_Btn_Click);
             // 
             // Main
             // 

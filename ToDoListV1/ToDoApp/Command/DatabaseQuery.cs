@@ -133,5 +133,17 @@ namespace TodoApp
             }
             return DT;
         } 
+        public static void Update_Data(string Command)
+        {
+            using (SQLiteConnection con = new SQLiteConnection(path_database))
+            {
+                using (SQLiteCommand cmd = new SQLiteCommand(Command, con))
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+        }
     }
 }

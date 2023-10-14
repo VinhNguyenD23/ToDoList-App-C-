@@ -80,7 +80,7 @@ namespace TodoApp
             Update_Database_Default();
         }
 
-        private void Update_Data(string Command)
+        private void Update_DataTable(string Command)
         {
             Data_View.DataSource = null;
             Data_View.ReadOnly = true;
@@ -96,7 +96,7 @@ namespace TodoApp
             Data_View.Columns[4].HeaderText = "Thời gian hoàn thành";
             Data_View.Columns[4].Width = 150;
             Data_View.Columns[5].HeaderText = "Ghi chú";
-            Data_View.Columns[5].Width = 150;
+            Data_View.Columns[5].Width = 200;
             Data_View.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
@@ -105,18 +105,18 @@ namespace TodoApp
             if(RB_1.Checked)
             {
                 string Command = $"SELECT STATUS,TITLE,PRIORITY,TIME_BEGIN,TIME_END,NOTE FROM TODOLIST WHERE STATUS = '{DatabaseQuery.Process[Status_CB.SelectedIndex]}'";
-                Update_Data(Command);
+                Update_DataTable(Command);
             }
             else if(RB_2.Checked)
             {
                 string Command = $"SELECT STATUS,TITLE,PRIORITY,TIME_BEGIN,TIME_END,NOTE FROM TODOLIST WHERE PRIORITY = '{DatabaseQuery.Day[Priority_CB.SelectedIndex]}'";
-                Update_Data(Command);
+                Update_DataTable(Command);
             }
             else
             {
                 string Day = Time_End_CB.Value.ToShortDateString();
                 string Command = $"SELECT STATUS,TITLE,PRIORITY,TIME_BEGIN,TIME_END,NOTE FROM TODOLIST WHERE TIME_END = '{Day}'";
-                Update_Data(Command);
+                Update_DataTable(Command);
             }
         }
 

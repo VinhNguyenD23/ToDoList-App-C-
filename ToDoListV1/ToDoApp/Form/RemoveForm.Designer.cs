@@ -31,7 +31,6 @@ namespace TodoApp
         {
             this.kryptonGroupBox2 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
-            this.Data_View = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.kryptonGroupBox1 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
             this.Note_Txt = new ComponentFactory.Krypton.Toolkit.KryptonRichTextBox();
             this.kryptonLabel5 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
@@ -44,18 +43,19 @@ namespace TodoApp
             this.kryptonLabel3 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.Cancelled_Btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
+            this.Data_View = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).BeginInit();
             this.kryptonGroupBox2.Panel.SuspendLayout();
             this.kryptonGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Data_View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
             this.kryptonGroupBox1.Panel.SuspendLayout();
             this.kryptonGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Priority_CB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Data_View)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonGroupBox2
@@ -89,26 +89,6 @@ namespace TodoApp
             this.kryptonPanel1.Size = new System.Drawing.Size(994, 280);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.White;
             this.kryptonPanel1.TabIndex = 0;
-            // 
-            // Data_View
-            // 
-            this.Data_View.AllowUserToAddRows = false;
-            this.Data_View.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Data_View.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Data_View.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Sheet;
-            this.Data_View.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
-            this.Data_View.GridStyles.StyleColumn = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.Data_View.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.Data_View.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
-            this.Data_View.Location = new System.Drawing.Point(4, 4);
-            this.Data_View.Name = "Data_View";
-            this.Data_View.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.Data_View.RowHeadersVisible = false;
-            this.Data_View.Size = new System.Drawing.Size(985, 273);
-            this.Data_View.TabIndex = 0;
-            this.Data_View.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Data_View_CellClick);
             // 
             // kryptonGroupBox1
             // 
@@ -242,6 +222,28 @@ namespace TodoApp
             this.Cancelled_Btn.Values.Text = "Xóa Task";
             this.Cancelled_Btn.Click += new System.EventHandler(this.Cancelled_Btn_Click);
             // 
+            // Data_View
+            // 
+            this.Data_View.AllowUserToAddRows = false;
+            this.Data_View.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Data_View.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Data_View.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.Sheet;
+            this.Data_View.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundSheet;
+            this.Data_View.GridStyles.StyleColumn = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.Data_View.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.Data_View.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.Sheet;
+            this.Data_View.Location = new System.Drawing.Point(3, 3);
+            this.Data_View.Name = "Data_View";
+            this.Data_View.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.Data_View.ReadOnly = true;
+            this.Data_View.RowHeadersVisible = false;
+            this.Data_View.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Data_View.Size = new System.Drawing.Size(986, 274);
+            this.Data_View.TabIndex = 1;
+            this.Data_View.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Data_View_CellClick);
+            // 
             // RemoveForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,13 +261,13 @@ namespace TodoApp
             this.kryptonGroupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Data_View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).EndInit();
             this.kryptonGroupBox1.Panel.ResumeLayout(false);
             this.kryptonGroupBox1.Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).EndInit();
             this.kryptonGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Priority_CB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Data_View)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -274,7 +276,6 @@ namespace TodoApp
 
         private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox2;
         private ComponentFactory.Krypton.Toolkit.KryptonPanel kryptonPanel1;
-        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView Data_View;
         private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox1;
         private ComponentFactory.Krypton.Toolkit.KryptonRichTextBox Note_Txt;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel5;
@@ -287,5 +288,6 @@ namespace TodoApp
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel3;
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
         private ComponentFactory.Krypton.Toolkit.KryptonButton Cancelled_Btn;
+        private ComponentFactory.Krypton.Toolkit.KryptonDataGridView Data_View;
     }
 }

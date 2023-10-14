@@ -84,18 +84,9 @@ namespace TodoApp
             }
             else
             {
-                using (SQLiteConnection con = new SQLiteConnection(DatabaseQuery.path_database))
-                {
-                    string Command = $"UPDATE TODOLIST SET STATUS = '{DatabaseQuery.Process[3]}' WHERE ID_TASK = '{ID_TASK}'";
-                    using(SQLiteCommand cmd = new SQLiteCommand(Command,con))
-                    {
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                        MessageBox.Show("Hủy task thành công", "Thông báo");
-                        Update_Database_Default();
-                    }
-                }
+                DatabaseQuery.Update_Data($"UPDATE TODOLIST SET STATUS = '{DatabaseQuery.Process[3]}' WHERE ID_TASK = '{ID_TASK}'");
+                Update_Database_Default();
+                MessageBox.Show("Hủy task thành công", "Thông báo");
             }
         }
 
@@ -107,25 +98,9 @@ namespace TodoApp
             }
             else
             {
-                using (SQLiteConnection con = new SQLiteConnection(DatabaseQuery.path_database))
-                {
-                    string Command = $"UPDATE TODOLIST SET TITLE = '{Title_txt.Text.ToString()}', PRIORITY = '{Priority_CB.SelectedItem.ToString()}' , TIME_BEGIN = '{Time_Begin_CB.Value.ToShortDateString()}' , TIME_END = '{Time_End_CB.Text}' , NOTE = '{Note_Txt.Text}' WHERE ID_TASK = '{ID_TASK}'";
-                    using(SQLiteCommand cmd = new SQLiteCommand(Command, con))
-                    {
-                        con.Open();
-                        try
-                        {
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Sửa dữ liệu thành công", "Thông báo");
-                            Update_Database_Default();
-                        }
-                        catch (Exception er)
-                        {
-                            MessageBox.Show(er.Message, er.StackTrace);
-                        }
-                        con.Close();
-                    }
-                }
+                DatabaseQuery.Update_Data($"UPDATE TODOLIST SET TITLE = '{Title_txt.Text.ToString()}', PRIORITY = '{Priority_CB.SelectedItem.ToString()}' , TIME_BEGIN = '{Time_Begin_CB.Value.ToShortDateString()}' , TIME_END = '{Time_End_CB.Text}' , NOTE = '{Note_Txt.Text}' WHERE ID_TASK = '{ID_TASK}'");
+                Update_Database_Default();
+                MessageBox.Show("Sửa dữ liệu thành công", "Thông báo");
             }
         }
 
@@ -154,18 +129,9 @@ namespace TodoApp
             }
             else
             {
-                using (SQLiteConnection con = new SQLiteConnection(DatabaseQuery.path_database))
-                {
-                    string Command = $"UPDATE TODOLIST SET STATUS = '{DatabaseQuery.Process[1]}' WHERE ID_TASK = '{ID_TASK}' ";
-                    using (SQLiteCommand cmd = new SQLiteCommand(Command, con))
-                    {
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Sửa dữ liệu thành công", "Thông báo");
-                        con.Close();
-                        Update_Database_Default();
-                    }
-                }
+                DatabaseQuery.Update_Data($"UPDATE TODOLIST SET STATUS = '{DatabaseQuery.Process[1]}' WHERE ID_TASK = '{ID_TASK}' ");
+                Update_Database_Default();
+                MessageBox.Show("Sửa dữ liệu thành công", "Thông báo");
             }
         }
     }
