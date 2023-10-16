@@ -163,7 +163,16 @@ namespace TodoApp
             {
                 //null
             }
-            File.WriteAllText(Name_File, Data_EX);
+            try
+            {
+                File.WriteAllText(Name_File, Data_EX);
+                MessageBox.Show("Xuất file .csv thành công", "Thông báo");
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+                throw;
+            }
         }
     }
 }
