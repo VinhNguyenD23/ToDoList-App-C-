@@ -45,6 +45,7 @@ namespace TodoApp
             this.kryptonPanel1 = new ComponentFactory.Krypton.Toolkit.KryptonPanel();
             this.Data_View = new ComponentFactory.Krypton.Toolkit.KryptonDataGridView();
             this.kryptonGroupBox3 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.Export_excel_Btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.Delete_Btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.Edit_Btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.Add_Btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
@@ -273,6 +274,7 @@ namespace TodoApp
             // 
             // kryptonGroupBox3.Panel
             // 
+            this.kryptonGroupBox3.Panel.Controls.Add(this.Export_excel_Btn);
             this.kryptonGroupBox3.Panel.Controls.Add(this.Delete_Btn);
             this.kryptonGroupBox3.Panel.Controls.Add(this.Edit_Btn);
             this.kryptonGroupBox3.Panel.Controls.Add(this.Add_Btn);
@@ -281,6 +283,24 @@ namespace TodoApp
             this.kryptonGroupBox3.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.kryptonGroupBox3.TabIndex = 1;
             this.kryptonGroupBox3.Values.Heading = "Thao tác";
+            // 
+            // Export_excel_Btn
+            // 
+            this.Export_excel_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Export_excel_Btn.Location = new System.Drawing.Point(457, 4);
+            this.Export_excel_Btn.Name = "Export_excel_Btn";
+            this.Export_excel_Btn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.Export_excel_Btn.Size = new System.Drawing.Size(90, 25);
+            this.Export_excel_Btn.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Export_excel_Btn.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.Export_excel_Btn.StateNormal.Back.ColorAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Form;
+            this.Export_excel_Btn.StateNormal.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Solid;
+            this.Export_excel_Btn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Export_excel_Btn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Export_excel_Btn.TabIndex = 3;
+            this.Export_excel_Btn.Values.Text = "Xuất file excel";
+            this.Export_excel_Btn.Click += new System.EventHandler(this.Export_excel_Btn_Click);
             // 
             // Delete_Btn
             // 
@@ -411,6 +431,7 @@ namespace TodoApp
         private ComponentFactory.Krypton.Toolkit.KryptonRadioButton RB_2;
         private ComponentFactory.Krypton.Toolkit.KryptonRadioButton RB_1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton Reset_Btn;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton Export_excel_Btn;
     }
 }
 

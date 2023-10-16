@@ -15,7 +15,7 @@ namespace TodoApp
             try
             {
                 string path = "Database";
-                if (!File.Exists(path))
+                if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);
                 }

@@ -1,4 +1,8 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Data;
+using System.Data.SQLite;
+using System.IO;
+using System.Windows.Forms;
 namespace TodoApp
 {
     public partial class Main : Form
@@ -123,6 +127,43 @@ namespace TodoApp
         private void Reset_Btn_Click(object sender, System.EventArgs e)
         {
             Update_Database_Default();
+        }
+
+        private void Export_excel_Btn_Click(object sender, System.EventArgs e)
+        {
+            if(!Directory.Exists("Data"))
+            {
+                Directory.CreateDirectory("Data");
+            }
+            string Name_File = @"Data\DATA" + DateTime.Now.ToShortDateString().Replace('/', '-') + ".csv";
+            DataTable DT = new DataTable();
+            using (SQLiteConnection con = new SQLiteConnection(DatabaseQuery.path_database))
+            {
+                string Command1 = "SELECT * FROM TODOLIST";
+                using (SQLiteCommand cmd = new SQLiteCommand(Command1, con))
+                {
+                    con.Open();
+                    SQLiteDataReader Dr = cmd.ExecuteReader();
+                    DT.Load(Dr);
+                    con.Close();
+                }
+            }
+            string Data_EX = "Trạng thái,Tiêu đề,Mức độ ưu tiên, Thời gian bắt đầu, Thời gian kết thúc, Ghi chú\n";
+            foreach (DataRow item in DT.Rows)
+            {
+                string status = item["STATUS"].ToString();
+                string Title = item["TITLE"].ToString();
+                string Priority = item["PRIORITY"].ToString();
+                string Time_Begin = item["TIME_BEGIN"].ToString().Replace('/','.');
+                string Time_End = item["TIME_END"].ToString().Replace('/', '.');
+                string Note = item["NOTE"].ToString();
+                Data_EX += status + ',' + Title + ',' + Priority + ',' + Time_Begin + ',' + Time_End + ',' + Note + "\n";
+            }
+            using (File.Create(Name_File))
+            {
+                //null
+            }
+            File.WriteAllText(Name_File, Data_EX);
         }
     }
 }

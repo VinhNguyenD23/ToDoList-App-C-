@@ -1,3 +1,9 @@
+D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\TodoApp.AddForm.resources
+D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\TodoApp.EditForm.resources
+D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\TodoApp.Main.resources
+D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\ToDoList.Properties.Resources.resources
+D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\TodoApp.RemoveForm.resources
+D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\ToDoList.csproj.GenerateResource.cache
 D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\bin\Debug\ToDoListV1.exe.config
 D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\bin\Debug\ToDoListV1.exe
 D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\bin\Debug\ToDoListV1.pdb
@@ -18,12 +24,6 @@ D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\bin\Debug\EntityFramework
 D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\bin\Debug\System.Data.SQLite.xml
 D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\bin\Debug\ComponentFactory.Krypton.Navigator.pdb
 D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\ToDoList.csproj.AssemblyReference.cache
-D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\TodoApp.AddForm.resources
-D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\TodoApp.EditForm.resources
-D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\TodoApp.Main.resources
-D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\ToDoList.Properties.Resources.resources
-D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\TodoApp.RemoveForm.resources
-D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\ToDoList.csproj.GenerateResource.cache
 D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\ToDoList.csproj.CoreCompileInputs.cache
 D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\ToDoList.csproj.CopyComplete
 D:\Users\Administrator\source\repos\ToDoListV1\ToDoApp\obj\Debug\ToDoListV1.exe
