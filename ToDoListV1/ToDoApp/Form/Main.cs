@@ -60,7 +60,7 @@ namespace TodoApp
             }
             Update_Database_Default();
             Update_Combo_filter();
-            RB_1.Select();
+
         }
 
         private void Add_Btn_Click(object sender, System.EventArgs e)
@@ -106,20 +106,47 @@ namespace TodoApp
 
         private void Find_Btn_Click(object sender, System.EventArgs e)
         {
-            if(RB_1.Checked)
+            string Command;
+            if (Title_Search_txt.Text == "")
             {
-                string Command = $"SELECT STATUS,TITLE,PRIORITY,TIME_BEGIN,TIME_END,NOTE FROM TODOLIST WHERE STATUS = '{DatabaseQuery.Process[Status_CB.SelectedIndex]}'";
-                Update_DataTable(Command);
-            }
-            else if(RB_2.Checked)
-            {
-                string Command = $"SELECT STATUS,TITLE,PRIORITY,TIME_BEGIN,TIME_END,NOTE FROM TODOLIST WHERE PRIORITY = '{DatabaseQuery.Day[Priority_CB.SelectedIndex]}'";
+                if (RB_1.Checked)
+                {
+                    Command = $"SELECT STATUS,TITLE,PRIORITY,TIME_BEGIN,TIME_END,NOTE FROM TODOLIST WHERE STATUS = '{DatabaseQuery.Process[Status_CB.SelectedIndex]}'";
+                    Update_DataTable(Command);
+                }
+                else if (RB_2.Checked)
+                {
+                    Command = $"SELECT STATUS,TITLE,PRIORITY,TIME_BEGIN,TIME_END,NOTE FROM TODOLIST WHERE PRIORITY = '{DatabaseQuery.Day[Priority_CB.SelectedIndex]}'";
+                    Update_DataTable(Command);
+                }
+                else
+                {
+                    string Day = Time_End_CB.Value.ToShortDateString();
+                    Command = $"SELECT STATUS,TITLE,PRIORITY,TIME_BEGIN,TIME_END,NOTE FROM TODOLIST WHERE TIME_END = '{Day}'";
+                    Update_DataTable(Command);
+                }
+                Command = $"SELECT STATUS,TITLE,PRIORITY,TIME_BEGIN,TIME_END,NOTE FROM TODOLIST WHERE TITLE LIKE '%%'";
                 Update_DataTable(Command);
             }
             else
             {
-                string Day = Time_End_CB.Value.ToShortDateString();
-                string Command = $"SELECT STATUS,TITLE,PRIORITY,TIME_BEGIN,TIME_END,NOTE FROM TODOLIST WHERE TIME_END = '{Day}'";
+                if (RB_1.Checked)
+                {
+                    Command = $"SELECT STATUS,TITLE,PRIORITY,TIME_BEGIN,TIME_END,NOTE FROM TODOLIST WHERE (STATUS = '{DatabaseQuery.Process[Status_CB.SelectedIndex]}') AND (TITLE LIKE '%{Title_Search_txt.Text}%')";
+                    Update_DataTable(Command);
+                }
+                else if (RB_2.Checked)
+                {
+                    Command = $"SELECT STATUS,TITLE,PRIORITY,TIME_BEGIN,TIME_END,NOTE FROM TODOLIST WHERE (PRIORITY = '{DatabaseQuery.Day[Priority_CB.SelectedIndex]}') AND (TITLE LIKE '%{Title_Search_txt.Text}%')";
+                    Update_DataTable(Command);
+                }
+                else
+                {
+                    string Day = Time_End_CB.Value.ToShortDateString();
+                    Command = $"SELECT STATUS,TITLE,PRIORITY,TIME_BEGIN,TIME_END,NOTE FROM TODOLIST WHERE (TIME_END = '{Day}') AND (TITLE LIKE '%{Title_Search_txt.Text}%')";
+                    Update_DataTable(Command);
+                }
+                Command = $"SELECT STATUS,TITLE,PRIORITY,TIME_BEGIN,TIME_END,NOTE FROM TODOLIST WHERE TITLE LIKE '%{Title_Search_txt.Text}%'";
                 Update_DataTable(Command);
             }
         }

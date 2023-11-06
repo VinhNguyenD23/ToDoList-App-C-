@@ -51,6 +51,8 @@ namespace TodoApp
             this.Add_Btn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.Status_ = new System.Windows.Forms.StatusStrip();
             this.Status_LB = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Title_Search_txt = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel2 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
             this.kryptonGroupBox1.Panel.SuspendLayout();
@@ -81,6 +83,8 @@ namespace TodoApp
             // 
             // kryptonGroupBox1.Panel
             // 
+            this.kryptonGroupBox1.Panel.Controls.Add(this.kryptonLabel2);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.Title_Search_txt);
             this.kryptonGroupBox1.Panel.Controls.Add(this.Reset_Btn);
             this.kryptonGroupBox1.Panel.Controls.Add(this.RB_3);
             this.kryptonGroupBox1.Panel.Controls.Add(this.RB_2);
@@ -115,7 +119,7 @@ namespace TodoApp
             // 
             // RB_3
             // 
-            this.RB_3.Location = new System.Drawing.Point(4, 137);
+            this.RB_3.Location = new System.Drawing.Point(4, 179);
             this.RB_3.Name = "RB_3";
             this.RB_3.Size = new System.Drawing.Size(189, 20);
             this.RB_3.TabIndex = 16;
@@ -123,7 +127,7 @@ namespace TodoApp
             // 
             // RB_2
             // 
-            this.RB_2.Location = new System.Drawing.Point(4, 111);
+            this.RB_2.Location = new System.Drawing.Point(4, 151);
             this.RB_2.Name = "RB_2";
             this.RB_2.Size = new System.Drawing.Size(139, 20);
             this.RB_2.TabIndex = 15;
@@ -131,7 +135,7 @@ namespace TodoApp
             // 
             // RB_1
             // 
-            this.RB_1.Location = new System.Drawing.Point(4, 85);
+            this.RB_1.Location = new System.Drawing.Point(4, 123);
             this.RB_1.Name = "RB_1";
             this.RB_1.Size = new System.Drawing.Size(126, 20);
             this.RB_1.TabIndex = 14;
@@ -141,7 +145,7 @@ namespace TodoApp
             // 
             this.Time_End_CB.CalendarTodayDate = new System.DateTime(2023, 10, 8, 0, 0, 0, 0);
             this.Time_End_CB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Time_End_CB.Location = new System.Drawing.Point(139, 58);
+            this.Time_End_CB.Location = new System.Drawing.Point(139, 91);
             this.Time_End_CB.Name = "Time_End_CB";
             this.Time_End_CB.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.Time_End_CB.Size = new System.Drawing.Size(164, 21);
@@ -154,7 +158,7 @@ namespace TodoApp
             this.Priority_CB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Priority_CB.DropDownWidth = 164;
             this.Priority_CB.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Priority_CB.Location = new System.Drawing.Point(139, 31);
+            this.Priority_CB.Location = new System.Drawing.Point(139, 65);
             this.Priority_CB.Name = "Priority_CB";
             this.Priority_CB.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.Priority_CB.Size = new System.Drawing.Size(164, 21);
@@ -167,7 +171,7 @@ namespace TodoApp
             this.Status_CB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Status_CB.DropDownWidth = 164;
             this.Status_CB.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Status_CB.Location = new System.Drawing.Point(139, 4);
+            this.Status_CB.Location = new System.Drawing.Point(139, 37);
             this.Status_CB.Name = "Status_CB";
             this.Status_CB.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.Status_CB.Size = new System.Drawing.Size(164, 21);
@@ -175,7 +179,7 @@ namespace TodoApp
             // 
             // kryptonLabel4
             // 
-            this.kryptonLabel4.Location = new System.Drawing.Point(4, 58);
+            this.kryptonLabel4.Location = new System.Drawing.Point(4, 92);
             this.kryptonLabel4.Name = "kryptonLabel4";
             this.kryptonLabel4.Size = new System.Drawing.Size(129, 20);
             this.kryptonLabel4.TabIndex = 7;
@@ -183,7 +187,7 @@ namespace TodoApp
             // 
             // kryptonLabel3
             // 
-            this.kryptonLabel3.Location = new System.Drawing.Point(4, 32);
+            this.kryptonLabel3.Location = new System.Drawing.Point(4, 65);
             this.kryptonLabel3.Name = "kryptonLabel3";
             this.kryptonLabel3.Size = new System.Drawing.Size(76, 20);
             this.kryptonLabel3.TabIndex = 6;
@@ -191,7 +195,7 @@ namespace TodoApp
             // 
             // kryptonLabel1
             // 
-            this.kryptonLabel1.Location = new System.Drawing.Point(4, 4);
+            this.kryptonLabel1.Location = new System.Drawing.Point(4, 38);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(66, 20);
             this.kryptonLabel1.TabIndex = 4;
@@ -371,6 +375,22 @@ namespace TodoApp
             this.Status_LB.Size = new System.Drawing.Size(55, 17);
             this.Status_LB.Text = "Connect:";
             // 
+            // Title_Search_txt
+            // 
+            this.Title_Search_txt.Location = new System.Drawing.Point(139, 11);
+            this.Title_Search_txt.Name = "Title_Search_txt";
+            this.Title_Search_txt.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.Title_Search_txt.Size = new System.Drawing.Size(164, 23);
+            this.Title_Search_txt.TabIndex = 20;
+            // 
+            // kryptonLabel2
+            // 
+            this.kryptonLabel2.Location = new System.Drawing.Point(4, 11);
+            this.kryptonLabel2.Name = "kryptonLabel2";
+            this.kryptonLabel2.Size = new System.Drawing.Size(30, 20);
+            this.kryptonLabel2.TabIndex = 21;
+            this.kryptonLabel2.Values.Text = "Tên";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,6 +452,8 @@ namespace TodoApp
         private ComponentFactory.Krypton.Toolkit.KryptonRadioButton RB_1;
         private ComponentFactory.Krypton.Toolkit.KryptonButton Reset_Btn;
         private ComponentFactory.Krypton.Toolkit.KryptonButton Export_excel_Btn;
+        private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel2;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox Title_Search_txt;
     }
 }
 
