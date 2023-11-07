@@ -46,13 +46,13 @@ namespace TodoApp
         public Main()
         {
             InitializeComponent();
-            if(DatabaseQuery.Check_Database())
+            if (DatabaseQuery.Check_Database())
             {
                 Status_LB.Text = "Database Status: Kết nối thành công";
                 Add_Btn.Enabled = true;
                 Edit_Btn.Enabled = true;
                 Delete_Btn.Enabled = true;
-                Find_Btn.Enabled = true; 
+                Find_Btn.Enabled = true;
             }
             else
             {
@@ -158,7 +158,7 @@ namespace TodoApp
 
         private void Export_excel_Btn_Click(object sender, System.EventArgs e)
         {
-            if(!Directory.Exists("Data"))
+            if (!Directory.Exists("Data"))
             {
                 Directory.CreateDirectory("Data");
             }
@@ -175,7 +175,8 @@ namespace TodoApp
                     con.Close();
                 }
             }
-            string Data_EX = "Trạng thái,Tiêu đề,Mức độ ưu tiên, Thời gian bắt đầu, Thời gian kết thúc, Ghi chú\n";
+            string Data_EX = "Trạng thái;Tiêu đề;Mức độ ưu tiên;Thời gian bắt đầu;Thời gian kết thúc;Ghi chú\n";
+            //string Data_EX = "STATUS,TITLE,PRIORITY,TIME_BEGIN,TIME_END,NOTE\n";
             foreach (DataRow item in DT.Rows)
             {
                 string status = item["STATUS"].ToString();
@@ -184,7 +185,8 @@ namespace TodoApp
                 string Time_Begin = item["TIME_BEGIN"].ToString().Replace('/','.');
                 string Time_End = item["TIME_END"].ToString().Replace('/', '.');
                 string Note = item["NOTE"].ToString();
-                Data_EX += status + ',' + Title + ',' + Priority + ',' + Time_Begin + ',' + Time_End + ',' + Note + "\n";
+                //Data_EX += status + ';' + Title + ';' + Priority + ';' + Time_Begin + ';' + Time_End + ';' + Note + "\n";
+                Data_EX += $"{status};{Title},{Priority};{Time_Begin};{Time_End};{Note}\n";
             }
             using (File.Create(Name_File))
             {
@@ -192,7 +194,7 @@ namespace TodoApp
             }
             try
             {
-                File.WriteAllText(Name_File, Data_EX);
+                File.WriteAllText(Name_File, Data_EX, System.Text.Encoding.UTF8);
                 MessageBox.Show("Xuất file .csv thành công", "Thông báo");
             }
             catch (Exception e1)
