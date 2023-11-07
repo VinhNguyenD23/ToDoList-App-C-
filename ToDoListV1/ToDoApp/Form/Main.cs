@@ -186,7 +186,7 @@ namespace TodoApp
                 string Time_End = item["TIME_END"].ToString().Replace('/', '.');
                 string Note = item["NOTE"].ToString();
                 //Data_EX += status + ';' + Title + ';' + Priority + ';' + Time_Begin + ';' + Time_End + ';' + Note + "\n";
-                Data_EX += $"{status};{Title},{Priority};{Time_Begin};{Time_End};{Note}\n";
+                Data_EX += $"{status};{Title};{Priority};{Time_Begin};{Time_End};{Note}\n";
             }
             using (File.Create(Name_File))
             {
